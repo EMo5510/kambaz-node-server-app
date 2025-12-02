@@ -4,9 +4,8 @@ import express from 'express';
 import mongoose from "mongoose";
 
 import UserRoutes from "./Kambaz/Users/routes.js";
-import CourseRoutes from "./Kambaz/Courses/routes.js";
+import CoursesRoutes from "./Kambaz/Courses/routes.js";
 import ModulesRoutes from "./Kambaz/Modules/routes.js";
-import AssignmentsRoutes from "./Kambaz/Assignments/routes.js";
 import cors from "cors";
 import session from "express-session";
 import "dotenv/config";
@@ -38,9 +37,8 @@ app.use(express.json());
 
 Hello(app)
 Lab5(app)
-CourseRoutes(app);
-ModuleRoutes(app);
-AssignmentRoutes(app);
+CoursesRoutes(app);
+ModulesRoutes(app);
 UserRoutes(app);
 
 app.listen(process.env.PORT || 4000)
