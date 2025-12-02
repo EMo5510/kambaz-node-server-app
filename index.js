@@ -17,7 +17,7 @@ mongoose.connect(CONNECTION_STRING);
 const app = express();
 app.use(cors({
   credentials: true,
-  origin: process.env.FRONTEND_URL,
+  origin: process.env.CLIENT_URL,
 }));
 app.use(express.json());
 const sessionOptions = {
@@ -30,16 +30,17 @@ if (process.env.NODE_ENV !== "development") {
   sessionOptions.cookie = {
     sameSite: "none",
     secure: true,
-    domain: process.env.HTTP_SERVER_DOMAIN,
+    domain: process.env.SERVER_URL,
   };
 }
 app.use(session(sessionOptions));
+app.use(express.json());
 
+Hello(app)
+Lab5(app)
 CourseRoutes(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
-Lab5(app)
-Hello(app)
 UserRoutes(app);
 
 app.listen(process.env.PORT || 4000)
