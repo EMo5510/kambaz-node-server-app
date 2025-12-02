@@ -3,11 +3,11 @@ import Lab5 from "./Lab5/index.js";
 import express from 'express';
 import mongoose from "mongoose";
 
-import CourseRoutes from "./Kanbas/courses/routes.js";
-import ModuleRoutes from './Kanbas/modules/routes.js';
+import UserRoutes from "./Kambaz/Users/routes.js";
+import CourseRoutes from "./Kambaz/Courses/routes.js";
+import ModulesRoutes from "./Kambaz/Modules/routes.js";
+import AssignmentsRoutes from "./Kambaz/Assignments/routes.js";
 import cors from "cors";
-import AssignmentRoutes from './Kanbas/Assignment/routes.js';
-import UserRoutes from './Kanbas/Users/routes.js';
 import session from "express-session";
 import "dotenv/config";
 
